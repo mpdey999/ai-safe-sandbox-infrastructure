@@ -1,0 +1,19 @@
+# Terraform state and plans
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# Local variable files may contain client configuration
+terraform/*.tfvars
+!terraform/dev.tfvars.example
+
+# Credentials and environment files
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12

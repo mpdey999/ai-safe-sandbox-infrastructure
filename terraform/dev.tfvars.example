@@ -1,0 +1,37 @@
+# Copy to dev.tfvars locally if needed, but keep client-specific tfvars out of Git.
+# Use the supplied subscription/tenant IDs only in your private environment variables
+# or in this non-secret config if client policy permits.
+subscription_id = "REPLACE_WITH_AZURE_SUBSCRIPTION_ID"
+tenant_id       = "REPLACE_WITH_AZURE_TENANT_ID"
+
+location            = "centralindia"
+resource_group_name = "rg-ai-safe-sandbox-phase0-poc"
+
+# Must be globally unique and lowercase alphanumeric. Check approval before choosing.
+acr_name = "REPLACE_WITH_GLOBALLY_UNIQUE_ACR_NAME"
+
+log_analytics_name = "law-ai-safe-sandbox-phase0"
+vnet_name          = "vnet-ai-safe-sandbox-phase0"
+
+# Example only: get CIDRs approved by your network team and ensure no overlap.
+vnet_address_space         = ["10.80.0.0/16"]
+aca_subnet_name            = "snet-aca-infrastructure"
+aca_subnet_address_prefixes = ["10.80.1.0/27"]
+
+# false makes the sample app externally reachable for a basic smoke test.
+# Set true only when private access/DNS/network path is designed and approved.
+internal_environment = false
+
+container_app_name = "ca-ai-safe-sandbox-smoke"
+container_image    = "mcr.microsoft.com/azuredocs/containerapps-helloworld:latest"
+container_port     = 80
+app_min_replicas   = 0
+app_max_replicas   = 1
+
+tags = {
+  workload       = "ai-safe-sandbox"
+  environment    = "poc"
+  managed_by     = "terraform"
+  business_owner = "REPLACE_WITH_APPROVED_OWNER"
+  cost_center    = "REPLACE_WITH_APPROVED_COST_CENTER"
+}
