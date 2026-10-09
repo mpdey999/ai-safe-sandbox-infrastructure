@@ -1,14 +1,14 @@
 # Copy to dev.tfvars locally if needed, but keep client-specific tfvars out of Git.
 # Use the supplied subscription/tenant IDs only in your private environment variables
 # or in this non-secret config if client policy permits.
-subscription_id = "REPLACE_WITH_AZURE_SUBSCRIPTION_ID"
-tenant_id       = "REPLACE_WITH_AZURE_TENANT_ID"
+subscription_id = "b5c8e848-ad6e-4ad0-9494-eb23d4f9350b"
+tenant_id       = "056a3dbf-8f2e-4f84-8314-219135e8d691"
 
 location            = "centralindia"
 resource_group_name = "rg-ai-safe-sandbox-phase0-poc"
 
 # Must be globally unique and lowercase alphanumeric. Check approval before choosing.
-acr_name = "REPLACE_WITH_GLOBALLY_UNIQUE_ACR_NAME"
+acr_name = "acrmukti"
 
 log_analytics_name = "law-ai-safe-sandbox-phase0"
 vnet_name          = "vnet-ai-safe-sandbox-phase0"
